@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+  {% include 'head.html' %}
+   
+  <link href="{% static 'wlink/css/portada.css' %} " rel="stylesheet">
+  
+  <body>
+    
+    <div class="container-fluid">
+        <div class="col-xs-12 col-sm-6 col-md-9">
+        </div>  
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <a class="btn btn-danger" href="{% url 'login' %}">Continuar</a>
+        </div>  
+    </div>   
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static 'wlink/js/bootstrap.min.js' %}"></script>
+  </body>
+</html>

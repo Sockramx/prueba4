@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if request.user.is_staff %}
+        <h2>Listado de links</h2>
+        
+        <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Pagina</th>
+                <th>Categoria</th>
+                <th>Url</th>
+              </tr>
+            </thead>
+            {% for i in lst_links %}
+            <tbody>
+              <tr>
+                <td>{{ i.id }}</td>
+                <td>{{ i.web }}</td>
+                <td>{{ i.categoria }}</td>
+                <td><a target="_blank" href="{{ i.link}}">{{ i.link}}</a></td>
+                <td><a href="{% url 'eliminar' i.id %}" class="btn btn-danger">Eliminar</a></td>
+              </tr>
+            </tbody>     
+            {% endfor %}
+        </table>
+
+    {% else %}
+            <h1>no logeado</h1>
+    {% endif %}
+{% endblock %}
+
+
